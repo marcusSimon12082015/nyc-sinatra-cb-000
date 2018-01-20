@@ -16,6 +16,19 @@ class FiguresController < ApplicationController
     erb :show
   end
 
+  get '/figures/:id/edit' do
+    @figure = Figure.find(params[:id])
+    #binding.pry
+    erb :edit
+  end
+
+  patch '/landmarks/:id' do
+    @figure = Figure.find(params[:id])
+    #binding.pry
+    @figure.update(name: params[:name])
+    redirect to("/figures/#{@figure.id}")
+  end
+
   post '/figures' do
     @figure = Figure.create(name: params[:figure_name])
 
