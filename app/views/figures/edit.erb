@@ -1,5 +1,6 @@
 <form method="post" action="/figures/<%=@figure.id%>">
   <input id="hidden" type="hidden" name="_method" value="patch">
-  Name: <input type="text" name="name" id="figure[name]" value="<%=@figure.name%>">
+  Name: <input type="text" name="name" id="figure_name" value="<%=@figure.name%>">
+  
   <input type="submit" value="Edit Figure">
 </form>
