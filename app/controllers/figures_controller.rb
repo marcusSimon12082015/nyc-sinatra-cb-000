@@ -48,8 +48,8 @@ class FiguresController < ApplicationController
       end
     end
 
+    binding.pry
     if !params[:landmark][:name].empty?
-      binding.pry
       landmark_new = Landmark.create(name: params[:landmark][:name])
       @figure.landmarks << landmark_new
     end
