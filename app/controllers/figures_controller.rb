@@ -49,7 +49,7 @@ class FiguresController < ApplicationController
       end
     end
 
-    if params[:landmark][:name] != ""
+    if params[:landmark][:name].empty? == false
       #@figure.landmarks << Landmark.create(name: params[:landmark][:name])
       binding.pry
     end
