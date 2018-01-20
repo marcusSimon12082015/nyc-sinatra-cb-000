@@ -48,15 +48,16 @@ class FiguresController < ApplicationController
         @figure.landmarks << Landmark.find(landmark.to_i)
       end
     end
-
+    
     if params[:landmark][:name].empty? == false
       #@figure.landmarks << Landmark.create(name: params[:landmark][:name])
       binding.pry
     end
-
-    #if !params[:title][:name].empty?
-    #  @figure.titles << Title.create(name: params[:title][:name])
-    #end
+      
+    if params[:title][:name].empty? == false
+      binding.pry
+      #@figure.titles << Title.create(name: params[:title][:name])
+    end
 
   end
 end
