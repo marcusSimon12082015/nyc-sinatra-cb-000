@@ -1,7 +1,7 @@
 <form method="post" action="/figures/<%=@figure.id%>">
   <input id="hidden" type="hidden" name="_method" value="patch">
   Name: <input type="text" name="figure_name" id="figure[name]" value="<%=@figure.name%>">
-  Landmark: <input type="text" name="new_landmark" id="landmark_name"> 
+  Landmark: <input type="text" name="new_landmark" id="landmark_name">
 </br>
   <% Title.all.each do |title| %>
     <input id="figure[title_ids]" type="checkbox" name="figure_titles" value="<%= title.id %>">
