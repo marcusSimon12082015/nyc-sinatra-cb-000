@@ -4,7 +4,7 @@
 </br>
   <% @figure.titles.each do |title| %>
     <input id="title_<%= title.id %>" type="checkbox" name="figure[title_ids][]" value="<%= title.id %>">
-    <%=title.name%>
+      <%=title.name%>
   </input>
   <% end %>
 </br>
