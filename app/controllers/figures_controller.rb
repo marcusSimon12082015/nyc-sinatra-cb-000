@@ -27,8 +27,8 @@ class FiguresController < ApplicationController
 
     if !params[:new_landmark].empty?
       landmark = Landmark.find_or_create_by(name: params[:new_landmark])
-      @figure.landmarks << landmark  
-    end   
+      @figure.landmarks << landmark
+    end
     @figure.update(name: params[:name])
     redirect to("/figures/#{@figure.id}")
   end
