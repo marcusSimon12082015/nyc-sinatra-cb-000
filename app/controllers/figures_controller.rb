@@ -13,12 +13,12 @@ class FiguresController < ApplicationController
 
   get '/figures/:id' do
     @figure = Figure.find(params[:id])
+    binding.pry
     erb :show
   end
 
   get '/figures/:id/edit' do
     @figure = Figure.find(params[:id])
-    binding.pry
     erb :edit
   end
 
