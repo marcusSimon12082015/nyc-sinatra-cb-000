@@ -45,11 +45,11 @@ class FiguresController < ApplicationController
     if !params[:figure][:landmark_ids].nil?
       params[:figure][:landmark_ids].each do |landmark|
         @figure.landmarks << Landmark.find(landmark.to_i)
-        binding.pry
       end
     end
 
     if !params[:landmark][:name].empty?
+      binding.pry
       landmark_new = Landmark.create(name: params[:landmark][:name])
       @figure.landmarks << landmark_new
     end
