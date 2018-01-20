@@ -22,9 +22,9 @@ class FiguresController < ApplicationController
     erb :edit
   end
 
-  patch '/landmarks/:id' do
+  patch '/figures/:id' do
     @figure = Figure.find(params[:id])
-    #binding.pry
+    binding.pry
     @figure.update(name: params[:name])
     redirect to("/figures/#{@figure.id}")
   end
