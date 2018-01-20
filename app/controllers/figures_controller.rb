@@ -36,7 +36,7 @@ class FiguresController < ApplicationController
   post '/figures' do
     @figure = Figure.create(name: params[:figure_name])
 
-    binding.pry
+    #binding.pry
     if !params[:figure][:title_ids].nil?
       params[:figure][:title_ids].each do |title|
         @figure.titles << Title.find(title.to_i)
@@ -48,9 +48,11 @@ class FiguresController < ApplicationController
         @figure.landmarks << Landmark.find(landmark.to_i)
       end
     end
-    #if !params[:landmark][:name].empty?
-    #  @figure.landmarks << Landmark.create(name: params[:landmark][:name])
-    #end
+
+    if params[:landmark][:name] != ""
+      #@figure.landmarks << Landmark.create(name: params[:landmark][:name])
+      binding.pry
+    end
 
     #if !params[:title][:name].empty?
     #  @figure.titles << Title.create(name: params[:title][:name])
