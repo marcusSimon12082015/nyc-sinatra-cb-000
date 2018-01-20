@@ -39,13 +39,13 @@ class FiguresController < ApplicationController
     if !params[:figure][:title_ids].nil?
       params[:figure][:title_ids].each do |title|
         @figure.titles << Title.find(title.to_i)
-        binding.pry
       end
     end
 
     if !params[:figure][:landmark_ids].nil?
       params[:figure][:landmark_ids].each do |landmark|
         @figure.landmarks << Landmark.find(landmark.to_i)
+        binding.pry
       end
     end
 
