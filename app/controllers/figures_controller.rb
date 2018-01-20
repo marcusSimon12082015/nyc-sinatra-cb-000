@@ -29,7 +29,7 @@ class FiguresController < ApplicationController
       landmark = Landmark.find_or_create_by(name: params[:new_landmark])
       @figure.landmarks << landmark
     end
-    @figure.update(name: params[:name])
+    @figure.update(name: params[:figure_name])
     redirect to("/figures/#{@figure.id}")
   end
 
